@@ -1,0 +1,4 @@
+3
+#ONE(&1, &2){Z&1$THREE(T)&2}
+#TWO(&1, &2){Z&1&2$ONE(M&1)}
+#THREE(&1){Z&1$ONE(K,W)$TWO(M,&1)}
