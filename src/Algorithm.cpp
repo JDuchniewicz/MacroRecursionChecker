@@ -24,14 +24,16 @@ void Algorithm::parseInput(const char* fileName)
 
     while (std::getline(file, line))
     {
-        parseEntry(line);
+        parseEntry(file, line);
     }
     file.close();
 }
 
-void Algorithm::parseEntry(const std::string& line)
+void Algorithm::parseEntry(std::ifstream& file, const std::string& line)
 {
     const char* ptr = line.c_str();
+    std::string newLine;
+
     if (*ptr != '#')
     {
         std::cerr << "File is wrongly formatted, please correct it!" << std::endl;
@@ -50,6 +52,17 @@ void Algorithm::parseEntry(const std::string& line)
 
     while (*ptr != '}')
     {
+        // mult-line macros need to have '\' at the end - need to read next line, reset ptr
+        if (*ptr == '\\')
+        {
+            if (!std::getline(file, newLine))
+            {
+                std::cerr << "File is wrongly formatted, for multi-line macros '\\' cannot be placed at the last macro line, please correct it!" << std::endl;
+                std::cerr << "LINE: " << newLine;
+                exit(-1);
+            }
+            ptr = newLine.c_str();
+        }
         if (*ptr == '$')
         { 
             ++ptr;

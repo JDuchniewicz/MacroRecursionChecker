@@ -12,7 +12,7 @@ public:
     bool checkForCycles() const;
 
 private:
-    void parseEntry(const std::string& line);
+    void parseEntry(std::ifstream& file, const std::string& line);
 
     std::unique_ptr<Graph> m_graph;
 };

@@ -1,0 +1,17 @@
+5
+#ONE(&1, &2)\
+{\
+    XYZ &1 $TWO(W) YDX $FOUR(X, Y, Z) $FIVE()\
+}
+#THREE() \
+{ \
+HERE \
+}
+#TWO(&1){ \
+ABC $THREE() KO}
+#FOUR(&1, &2, &3)\
+{\
+NOTHING\
+}
+#FIVE()\
+{SOMETHING}
