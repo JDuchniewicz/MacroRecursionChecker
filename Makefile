@@ -1,7 +1,7 @@
 # Linux makefile which keeps track of dependencies
 # automatically creates BUILD_DIR folder if needed
 
-TARGET_EXEC ?= LazyStudent_genetic
+TARGET_EXEC ?= Infinite_recursion
 BUILD_DIR ?= ./build
 SRC_DIRS ?= ./src
 INC_DIRS ?= ./headers

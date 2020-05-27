@@ -3,6 +3,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <string>
 
 namespace
 {
@@ -21,12 +22,10 @@ class Graph
 public:
     void initializeAdj(int N);
     void addEdge(const std::string& from, std::string to);
-    bool checkForCycles() const;
+    bool findCycle() const;
 
 private:
-    std::vector<int> findConnectedComponents() const;
-    bool checkOneComponent(int startID) const;
-    bool findCycleUtil(int vertex, std::unordered_set<int>& white, std::unordered_set<int>& grey, std::unordered_set<int> black);
+    bool findCycleUtil(int vertex, std::unordered_set<int>& white, std::unordered_set<int>& grey, std::unordered_set<int>& black) const;
 
     std::vector<std::vector<int>> m_adj;
     std::unordered_map<std::string, int> m_macroToID;

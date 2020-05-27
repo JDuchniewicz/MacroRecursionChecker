@@ -12,6 +12,6 @@ int main(int argc, char** argv)
     }
     algo.parseInput(argv[1]);
     result = algo.checkForCycles();
-    std::cout << (result ? "There is a" : "There is no") << " possibility of infinite recursion in given set of macrodefinitions." << std::endl;
+    std::cout << (result ? "RECURSION - There is a" : "NO - There is no") << " possibility of infinite recursion in given set of macrodefinitions." << std::endl;
     return 0;
 }

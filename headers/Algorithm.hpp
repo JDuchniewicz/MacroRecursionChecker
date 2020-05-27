@@ -6,6 +6,8 @@
 class Algorithm
 {
 public:
+    Algorithm() : m_graph(std::make_unique<Graph>()) {};
+
     void parseInput(const char* fileName);
     bool checkForCycles() const;
 

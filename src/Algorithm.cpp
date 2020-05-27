@@ -48,7 +48,7 @@ void Algorithm::parseEntry(const std::string& line)
     }
     macroName += '\n';
 
-    while (*ptr != '\n')
+    while (*ptr != '}')
     {
         if (*ptr == '$')
         { 
@@ -70,5 +70,5 @@ void Algorithm::parseEntry(const std::string& line)
 
 bool Algorithm::checkForCycles() const
 {
-    return m_graph->checkForCycles();
+    return m_graph->findCycle();
 }
